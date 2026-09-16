@@ -1,6 +1,6 @@
 # The Glare
 
-A responsive campaign website for stronger climate policy in Australia, starting with the private jet fuel tax break.
+A responsive campaign website for smarter policy in Australia, starting with climate and the private jet fuel tax break. The invitation welcomes people's ideas and expertise as well as collective action.
 
 ## Current status
 
@@ -30,7 +30,7 @@ Relative asset paths support the GitHub project address `/the-glare/` and a futu
 
 1. Configure the organiser-controlled email provider and its supported form, consent record, confirmation process and unsubscribe flow. Replace the disabled form with the provider's integration; simply enabling the current fields will not make them work. Never add a private API key to these public files.
 2. Identify the organiser and public contact route, and replace the preparation-stage privacy wording with the actual provider and data-handling details.
-3. Test submission, confirmation, repeat signup, the promised first action and unsubscribe. The signup scope includes this campaign and later Australian climate campaigns.
+3. Test submission, confirmation, repeat signup, the promised first action and unsubscribe. The signup scope is campaigns for smarter Australian policy, starting with climate, including opportunities to contribute ideas and take action. Set up a genuine reply or feedback route before inviting ideas by email; no idea submission form is implemented on this page.
 4. Add the selected final video if available, using a click-to-play embed with no automatic playback. The page does not depend on a video to explain the campaign.
 5. Recheck current tax rates and recipient links. Remove the preparation banner, signup status and `noindex, nofollow` metadata when the public launch is ready.
 
