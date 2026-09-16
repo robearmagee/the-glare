@@ -4,7 +4,7 @@ A responsive campaign website for stronger climate policy in Australia, starting
 
 ## Current status
 
-Local pre-launch website. Email signup is visibly disabled: no addresses are collected or sent. The website has no analytics, tracking scripts, external fonts or build dependencies. The final campaign video has not yet been supplied for embedding. Nothing in this repository requires subscriber data or private credentials.
+Pre-launch website at https://robearmagee.github.io/the-glare/ (GitHub Pages enabled; updates appear after the Pages build finishes). Email signup is visibly disabled: no addresses are collected or sent. The website has no analytics, tracking scripts, external fonts or build dependencies. The final campaign video has not yet been supplied for embedding. Nothing in this repository requires subscriber data or private credentials.
 
 ## Preview locally
 
@@ -36,7 +36,7 @@ Relative asset paths support the GitHub project address `/the-glare/` and a futu
 
 ## Publish on GitHub Pages
 
-Commit and push the reviewed public website files. In the repository's **Settings → Pages**, select **Deploy from a branch**, then **main** and **/(root)**. The intended address is `https://robearmagee.github.io/the-glare/`. This documentation does not mean deployment has been enabled.
+GitHub Pages is configured to publish from **main**, **/(root)**, with HTTPS enforced. Commit and push reviewed public website changes; GitHub rebuilds the site automatically. The address is `https://robearmagee.github.io/the-glare/`. Check the Pages build completes before expecting an update to be visible.
 
 Keep workbooks, planning notes, original video files, credentials and subscriber exports outside this repository. A `.gitignore` is an additional precaution, not a replacement for reviewing what is committed.
 
