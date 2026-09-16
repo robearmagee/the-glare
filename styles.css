@@ -66,6 +66,8 @@ input:disabled { opacity: 1; -webkit-text-fill-color: var(--muted); cursor: not-
 .campaign-art figcaption { padding-block: .5rem; text-align: right; color: var(--muted); font-size: .75rem; }
 .section-grid { display: grid; gap: 1.75rem; padding-block: 2rem; }
 .section-intro { margin-top: 1rem; max-width: 34rem; color: var(--muted); }
+.about { border-bottom: 1px solid var(--line); }
+.about .prose { color: var(--muted); }
 .evidence { border-bottom: 1px solid var(--line); }
 .rates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
 .rates > div { display: flex; flex-direction: column; gap: .625rem; }
