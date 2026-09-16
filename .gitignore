@@ -1,0 +1,13 @@
+# Local machine files
+.DS_Store
+Thumbs.db
+
+# Local credentials and development dependencies
+.env
+.env.*
+!.env.example
+node_modules/
+
+# Private working material must remain outside the published website.
+private/
+subscriber-exports/
