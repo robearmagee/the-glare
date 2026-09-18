@@ -120,3 +120,45 @@ summary::marker { color: var(--accent); }
   .section-grid > div + div { margin-top: 1rem; }
   body { color: #000; background: #fff; }
 }
+
+/* Keep Brevo's supported form structure, with the campaign's typography and spacing. */
+.signup .sib-form, .signup #sib-container { padding: 0; margin: 0; border: 0; background: transparent; text-align: left; font: inherit; }
+.signup .sib-form { margin-top: 1.25rem; }
+.signup #sib-form-container, .signup #sib-container { width: 100%; max-width: none; }
+.signup fieldset { margin: 0; }
+.signup .sib-form-block { padding: 0; font: inherit; }
+.signup #sib-form > fieldset > div { margin-bottom: 1rem; }
+.signup .entry__label { font: inherit; font-size: .875rem; color: var(--ink); margin-bottom: .5rem; }
+.signup .entry__field { margin: 0; padding: 0; border: 0; background: transparent; box-shadow: none; }
+.signup #EMAIL { width: 100%; height: auto; min-height: 3rem; padding: .625rem .75rem; border: 1px solid var(--line); border-radius: 2px; background: var(--paper); color: var(--ink); font: inherit; font-size: 1rem; }
+.signup #EMAIL::placeholder { color: var(--muted); opacity: 1; }
+.signup .entry__choice { font: inherit; margin: 0; }
+.signup .entry__choice > label { display: flex; align-items: flex-start; gap: .625rem; min-height: 2.75rem; padding-block: .25rem; cursor: pointer; }
+.signup #OPT_IN { position: static; opacity: 1; appearance: auto; width: 1.125rem; height: 1.125rem; flex: 0 0 1.125rem; margin: .2rem 0 0; accent-color: var(--button); }
+.signup .entry__choice .checkbox { display: none; }
+.signup .entry__choice p { font-size: .875rem; line-height: 1.5; color: var(--muted); }
+.signup .entry__label_optin { display: none; }
+.signup .primary-button { display: flex; background: var(--button); color: var(--button-text); font: inherit; font-weight: 600; cursor: pointer; }
+.signup .primary-button:disabled { cursor: wait; }
+.signup .primary-button svg { width: 1rem; height: 1rem; fill: currentColor; flex-shrink: 0; }
+.signup .sib-text-form-block p, .signup-fallback { font-size: .8125rem; line-height: 1.5; color: var(--muted); }
+.signup .sib-form-message-panel { display: none; margin: 0 0 1rem; padding: .75rem; max-width: 100%; font: inherit; font-size: .9375rem; border: 1px solid var(--line); border-radius: 2px; }
+.signup .sib-form-message-panel--active { display: block; }
+.signup #success-message { color: #23452e; background: #edf4e8; }
+.signup #error-message { color: #752c20; background: #fff0eb; }
+.signup .sib-form-message-panel__text { padding: 0; align-items: flex-start; }
+.signup .sib-notification__icon { width: 1.25rem; height: 1.25rem; margin-top: .15rem; }
+.signup .entry__error { font: inherit; font-size: .875rem; color: #752c20; }
+.signup .input--hidden { display: none !important; }
+.signup [hidden] { display: none !important; }
+.signup .cf-turnstile { min-height: 65px; max-width: 100%; }
+.signup .signup-fallback { margin-top: .75rem; }
+.privacy-page { max-width: 48rem; padding-block: 2rem 3rem; }
+.privacy-page h1 { max-width: 100%; }
+.privacy-page h2 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: .75rem; }
+.privacy-page p + p { margin-top: 1rem; }
+.privacy-page li + li { margin-top: .5rem; }
+@media (max-width: 380px) { .signup { padding: 16px; } .page-shell { width: calc(100% - 32px); } }
+.welcome-action { margin-top: 1.25rem; width: fit-content; text-decoration: none; }
+
+.signup #sib-container a { color: var(--ink); }

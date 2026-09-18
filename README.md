@@ -1,49 +1,44 @@
 # The Glare
 
-A responsive campaign website for smarter policy in Australia, starting with climate and the private jet fuel tax break. The invitation welcomes people's ideas and expertise as well as collective action.
+A responsive campaign website for smarter policy in Australia, starting with climate and the private jet fuel tax break.
 
-## Current status
+## Website
 
-Pre-launch website at https://robearmagee.github.io/the-glare/ (GitHub Pages enabled; updates appear after the Pages build finishes). Email signup is visibly disabled: no addresses are collected or sent. The website has no analytics, tracking scripts, external fonts or build dependencies. The final campaign video has not yet been supplied for embedding. Nothing in this repository requires subscriber data or private credentials.
+https://robearmagee.github.io/the-glare/
 
-## Preview locally
+GitHub Pages publishes the main branch from the repository root. The site uses plain HTML, CSS and JavaScript, with no build step. Relative asset paths work under `/the-glare/` or a future custom domain.
 
-From this folder, run:
+## Signup
 
-```sh
-python3 -m http.server 8765 --bind 127.0.0.1
-```
+The embedded form uses Brevo's supported HTML structure, official script and stylesheet, and Cloudflare Turnstile. Brevo manages the contact list and double confirmation process. Only a public Turnstile site key appears in source; private keys, subscriber lists and contact exports must stay outside this repository.
 
-Open `http://127.0.0.1:8765/`. You can also open `index.html` directly. The page works without JavaScript; the small script opens the privacy disclosure when following the footer link.
+`site.js` adds native email/consent validation, accessible status handling and recovery from interrupted requests. A successful submission asks the visitor to check their inbox; it does not claim they are already subscribed. Failed requests preserve entries and never retry automatically. With scripts unavailable, the form stays disabled and offers a separate hosted-form link.
+
+The privacy notice identifies the public campaign contact as theglare@robmagee.com.au and describes the roles of Brevo, Cloudflare and GitHub. There are no advertising pixels or additional audience analytics.
 
 ## Files
 
-- `index.html`: campaign copy, navigation, inactive signup layout, source links and direct actions.
-- `styles.css`: responsive layout, typography, touch targets, focus states, print and reduced-motion behaviour.
-- `site.js`: enhancement for the privacy link.
-- `assets/`: optimised versions of the approved centred-jet illustration and a simple initial favicon.
-- `.nojekyll`: serves these files directly through GitHub Pages.
+- `index.html`: campaign, signup form, source links and direct actions.
+- `styles.css`: responsive layout, typography and provider form styling.
+- `site.js`: signup behaviour and disclosure enhancements.
+- `privacy.html`: public information-handling notice and contact route.
+- `welcome.html`: branded destination after Brevo processes the email confirmation link.
+- `assets/`: responsive artwork and favicon.
 
-Relative asset paths support the GitHub project address `/the-glare/` and a future custom domain. The image uses responsive WebP sources with a JPEG fallback. Phone layouts show the full illustration; wider layouts use a shallow crop centred on the jet.
+## Brevo configuration
 
-## Before opening signup
+After deployment, set `https://robearmagee.github.io/the-glare/welcome.html` as the confirmation page after clicking the email validation link. The email button itself must retain Brevo's native double opt-in link.
 
-1. Configure the organiser-controlled email provider and its supported form, consent record, confirmation process and unsubscribe flow. Replace the disabled form with the provider's integration; simply enabling the current fields will not make them work. Never add a private API key to these public files.
-2. Identify the organiser and public contact route, and replace the preparation-stage privacy wording with the actual provider and data-handling details.
-3. Test submission, confirmation, repeat signup, the promised first action and unsubscribe. The signup scope is campaigns for smarter Australian policy, starting with climate, including opportunities to contribute ideas and take action. Set up a genuine reply or feedback route before inviting ideas by email; no idea submission form is implemented on this page.
-4. Add the selected final video if available, using a click-to-play embed with no automatic playback. The page does not depend on a video to explain the campaign.
-5. Recheck current tax rates and recipient links. Remove the preparation banner, signup status and `noindex, nofollow` metadata when the public launch is ready.
+Keep the hosted Brevo form's privacy link and provider disclosure consistent with this website. Configure sender and reply addresses in Brevo, not in website code. The final welcome email is optional; avoid sending duplicate welcome messages through multiple workflows.
 
-## Publish on GitHub Pages
+The confirmation email is still using a generic template. Customise it before promoting the campaign widely. The preparation banner and noindex metadata remain until final launch checks are complete.
 
-GitHub Pages is configured to publish from **main**, **/(root)**, with HTTPS enforced. Commit and push reviewed public website changes; GitHub rebuilds the site automatically. The address is `https://robearmagee.github.io/the-glare/`. Check the Pages build completes before expecting an update to be visible.
+## Preview and testing
 
-Keep workbooks, planning notes, original video files, credentials and subscriber exports outside this repository. A `.gitignore` is an additional precaution, not a replacement for reviewing what is committed.
+Run `python3 -m http.server 8765 --bind 127.0.0.1` from this directory. Turnstile must allow the actual hostname; localhost is not automatically authorised. Campaign content and disclosures remain usable without JavaScript.
 
-## Responsive checks
+On 18 September 2026, automated browser checks passed at 14 widths from 320 to 1920 pixels, with 200% text at 320/768/1280. Tests covered invalid email, unchecked consent, missing CAPTCHA, provider rejection, successful submission, interrupted connections, unavailable scripts and no-JavaScript fallback. Privacy and welcome pages were checked at four widths. Automated submissions and CAPTCHA responses were intercepted, so those tests sent no emails.
 
-Checked in an isolated Chromium-based browser on 16 September 2026 at widths 320, 360, 375, 390, 414, 600, 768, 820, 991, 992, 1024, 1280, 1440 and 1920 CSS pixels. Checked 200% text sizing at 320, 768 and 1280 pixels, keyboard skip navigation, disclosures, privacy-link behaviour, image loading, touch navigation target heights, and operation without JavaScript. No horizontal page overflow or missing local resources occurred. This is browser emulation, not testing on physical phones.
+One authorised real signup through the hosted Brevo form resulted in a received confirmation email. Full confirmation/list membership, the live embedded flow and unsubscribe require final checks. Browser emulation is not physical-device testing.
 
-## Evidence
-
-The page links directly to the ATO rate table, the excise tariff legislation, the indexed rate notice and the Parliamentary Budget Office explanation. Figures distinguish domestic aviation excise from other taxes and credit arrangements. The campaign's judgement about fairness is separate from those factual claims. Source and recipient checks were last performed on 16 September 2026; recheck before publication.
+Before promoting the campaign, complete these checks, review the email template and tracking settings, recheck the dated evidence and minister links, and add the final video when available. Remove the preparation banner and noindex metadata once ready.
